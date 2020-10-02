@@ -1,4 +1,6 @@
-node {  
+node {
+    checkout scm
+
     stage('Build') { 
         echo "Building in progress...."
          ant -f build.xml
@@ -9,7 +11,7 @@ node {
     stage('Deploy') { 
         echo "Deployment in progress...."
     }
-    checkout scm
+    
 
     docker.withRegistry('https://registry.example.com', 'credentials-id') {
 
