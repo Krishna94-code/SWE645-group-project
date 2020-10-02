@@ -1,5 +1,9 @@
 node {
-    checkout scm
+
+stage('Checkout') { 
+       checkout scm
+    }
+    
 
     stage('Build') { 
         echo "Building in progress...."
