@@ -1,6 +1,7 @@
 node {  
     stage('Build') { 
         echo "Building in progress...."
+         ant -f build.xml
     }
     stage('Test') { 
         echo "Testing in progress...."
