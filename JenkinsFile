@@ -1,9 +1,11 @@
 node {
 
+withAnt(installation: 'LocalAnt') {
+       sh "ant build"
+}
+
 stage('Checkout') { 
-       env.PATH = "${tool 'Ant'}/bin:${env.PATH}"
        checkout scm
-       sh 'ant build'
     }
     
 
