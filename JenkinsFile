@@ -1,11 +1,12 @@
 node {
 
-withAnt(installation: 'LocalAnt') {
-       sh "ant build"
-}
+
 
 stage('Checkout') { 
        checkout scm
+       withAnt(installation: 'LocalAnt') {
+       sh "ant build"
+}
     }
     
 
