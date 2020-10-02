@@ -1,7 +1,9 @@
 node {
 
 stage('Checkout') { 
+       env.PATH = "${tool 'Ant'}/bin:${env.PATH}"
        checkout scm
+       sh 'ant build'
     }
     
 
@@ -16,11 +18,11 @@ stage('Checkout') {
     }
     
 
-    docker.withRegistry('https://registry.example.com', 'credentials-id') {
+  /*  docker.withRegistry('https://registry.example.com', 'credentials-id') {
 
         def customImage = docker.build("my-image:${env.BUILD_ID}")
 
         /* Push the container to the custom Registry */
         customImage.push()
-    }
+    }*/
 }
